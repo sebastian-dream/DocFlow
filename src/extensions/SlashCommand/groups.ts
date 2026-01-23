@@ -157,6 +157,66 @@ export const GROUPS: Group[] = [
         },
       },
       {
+        name: 'alertInfo',
+        label: 'Info Alert',
+        iconName: 'Info',
+        description: 'Information alert box',
+        aliases: ['info', 'alert info'],
+        action: (editor) => {
+          editor.chain().focus().setAlert('info').run();
+        },
+      },
+      {
+        name: 'alertWarning',
+        label: 'Warning Alert',
+        iconName: 'AlertTriangle',
+        description: 'Warning alert box',
+        aliases: ['warning', 'alert warning', 'warn'],
+        action: (editor) => {
+          editor.chain().focus().setAlert('warning').run();
+        },
+      },
+      {
+        name: 'alertDanger',
+        label: 'Danger Alert',
+        iconName: 'AlertCircle',
+        description: 'Danger alert box',
+        aliases: ['danger', 'alert danger', 'error'],
+        action: (editor) => {
+          editor.chain().focus().setAlert('danger').run();
+        },
+      },
+      {
+        name: 'alertSuccess',
+        label: 'Success Alert',
+        iconName: 'CheckCircle',
+        description: 'Success alert box',
+        aliases: ['success', 'alert success', 'check'],
+        action: (editor) => {
+          editor.chain().focus().setAlert('success').run();
+        },
+      },
+      {
+        name: 'alertNote',
+        label: 'Note Alert',
+        iconName: 'FileText',
+        description: 'Note alert box',
+        aliases: ['note', 'alert note'],
+        action: (editor) => {
+          editor.chain().focus().setAlert('note').run();
+        },
+      },
+      {
+        name: 'alertTip',
+        label: 'Tip Alert',
+        iconName: 'Lightbulb',
+        description: 'Tip alert box',
+        aliases: ['tip', 'alert tip', 'hint'],
+        action: (editor) => {
+          editor.chain().focus().setAlert('tip').run();
+        },
+      },
+      {
         name: 'codeBlock',
         label: 'Code Block',
         iconName: 'SquareCode',
@@ -180,6 +240,16 @@ export const GROUPS: Group[] = [
         shouldBeHidden: (editor) => editor.isActive('columns'),
         action: (editor) => {
           editor.chain().focus().insertTable({ rows: 3, cols: 3, withHeaderRow: false }).run();
+        },
+      },
+      {
+        name: 'mathFormula',
+        label: '数学公式',
+        iconName: 'Sigma',
+        description: '插入数学公式（行内或块级）',
+        aliases: ['math', 'formula', 'equation', 'latex', '公式', '数学'],
+        action: (editor) => {
+          editor.chain().focus().openMathLiveEditor().run();
         },
       },
       {
